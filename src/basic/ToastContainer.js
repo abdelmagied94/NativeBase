@@ -50,7 +50,8 @@ class ToastContainer extends Component {
         if (dx !== 0) {
           Animated.timing(this.state.pan, {
             toValue: { x: dx, y: 0 },
-            duration: 100
+            duration: 100,
+            useNativeDriver: true
           }).start(() => this.closeToast('swipe'));
         }
       }
@@ -144,7 +145,7 @@ class ToastContainer extends Component {
     Animated.timing(this.state.fadeAnim, {
       toValue: 1,
       duration: 200,
-      useNativeDriver: false
+      useNativeDriver: true
     }).start();
   }
   closeModal(reason) {
@@ -161,7 +162,7 @@ class ToastContainer extends Component {
     Animated.timing(this.state.fadeAnim, {
       toValue: 0,
       duration: 200,
-      useNativeDriver: false
+      useNativeDriver: true
     }).start(() => {
       this.closeModal.bind(this, reason);
       this.state.pan.setValue({ x: 0, y: 0 });
