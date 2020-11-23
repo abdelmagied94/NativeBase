@@ -121,6 +121,7 @@ declare module "native-base" {
 			translucent?: boolean;
 			transparent?: boolean;
 			noLeft?: boolean;
+			ViewComponent?: React.Component | React.FC
 		}
 
 		interface Left extends Testable {

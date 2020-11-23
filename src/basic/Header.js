@@ -20,7 +20,8 @@ class Header extends Component {
       iosBarStyle,
       style,
       transparent,
-      translucent
+      translucent,
+      ViewComponent = View
     } = this.props;
 
     const variables = this.context.theme
@@ -51,7 +52,7 @@ class Header extends Component {
             backgroundColor: getStyle(style).backgroundColor
           }}
         >
-          <View ref={c => (this._root = c)} {...this.props} />
+          <ViewComponent ref={c => (this._root = c)} {...this.props} />
         </SafeAreaView>
       </View>
     );
