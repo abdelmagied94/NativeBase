@@ -15,12 +15,12 @@ class Root extends Component {
         {this.props.children}
         <Toast
           ref={c => {
-            if (c) Toast.toastInstance = c;
+            Toast.toastInstance = c;
           }}
         />
         <ActionSheet
           ref={c => {
-            if (c) ActionSheet.actionsheetInstance = c;
+            ActionSheet.actionsheetInstance = c;
           }}
         />
       </View>

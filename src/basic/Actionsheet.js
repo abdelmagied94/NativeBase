@@ -26,10 +26,20 @@ import { ListItem } from './ListItem';
 
 class ActionSheetContainer extends Component {
   static show(config, callback) {
-    this.actionsheetInstance._root.showActionSheet(config, callback);
+    const actionSheetRef = this.actionsheetInstance
+      ? this.actionsheetInstance._root
+      : null;
+    if (actionSheetRef) {
+      actionSheetRef.showActionSheet(config, callback);
+    }
   }
   static hide() {
-    this.actionsheetInstance._root.hideActionSheet();
+    const actionSheetRef = this.actionsheetInstance
+      ? this.actionsheetInstance._root
+      : null;
+    if (actionSheetRef) {
+      actionSheetRef.hideActionSheet();
+    }
   }
 
   constructor(props) {
